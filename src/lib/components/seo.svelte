@@ -1,6 +1,6 @@
 <script>
 	export let bc
-	import { breadcrumbs, siteName } from './header/breadcrumbStore.js'
+	import { breadcrumbs, siteName } from './globalStore.js'
 	breadcrumbs.set(bc)
 	export let description =
 		'Discover a world of unique accommodations and unforgettable experiences on our cutting-edge platform. Explore a curated selection of stunning vacation rentals, from cozy urban apartments to breathtaking countryside escapes. Book your next adventure with us and immerse yourself in the future of travel.'
