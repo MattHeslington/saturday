@@ -1,5 +1,6 @@
 <script>
 	import { flip } from 'svelte/animate'
+	import { Button } from '$lib/components/ui/button'
 	import { quintOut } from 'svelte/easing'
 	import { clickOutside } from '$lib/utils/clickOutside.js'
 	import { selectedDates } from '$lib/globalStore.js'
@@ -62,8 +63,9 @@
 	<button on:click={clickDates} class="col-span-1 border-r border-border pl-2 text-left font-bold tracking-tight hover:bg-muted"
 		>{calendarDates.startDate && calendarDates.endDate ? textStart + ' to ' + textEnd : 'Dates'}</button>
 	<button on:click={clickRooms} class="col-span-1 pl-2 text-left font-bold tracking-tight hover:bg-muted">Rooms</button>
-	<button class="bg-slate-12 text-slate-1 absolute right-0 top-[0px] h-[34px] rounded-md px-4 pb-[1px] font-bold tracking-tight"
-		>Search</button>
+	<!-- <button class="bg-slate-12 text-slate-1 absolute right-0 top-[0px] h-[34px] rounded-md px-4 pb-[1px] font-bold tracking-tight"
+		>Search</button> -->
+	<Button variant="secondary" class="absolute right-0 top-[0px]">Search</Button>
 
 	{#if expanded === true}
 		{#each things as thing (thing)}
