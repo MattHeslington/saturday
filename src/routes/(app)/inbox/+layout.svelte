@@ -1,10 +1,39 @@
 <script>
 	import * as Tabs from '$lib/components/ui/tabs'
+	import Message from './message.svelte'
+
 	const triggers = [
 		{ id: 'all', title: 'All' },
 		{ id: 'starred', title: 'Starred' },
 		{ id: 'archived', title: 'Archived' },
 		{ id: 'deleted', title: 'Deleted' }
+	]
+
+	const messageData = [
+		{
+			username: 'SarahJ',
+			createdAt: '2024-02-27T15:23:00.000+00:00',
+			villaName: 'Villa Sunset',
+			message: 'Just wanted to confirm our check-in time for tomorrow. Looking forward to our stay!'
+		},
+		{
+			username: 'Mike_1985',
+			createdAt: '2024-02-27T10:05:00.000+00:00',
+			villaName: 'Ocean Breeze',
+			message: 'Can we arrange an airport pickup? Our flight arrives at 2:30 PM.'
+		},
+		{
+			username: 'BeachLover22',
+			createdAt: '2024-02-26T20:12:00.000+00:00',
+			villaName: 'Seaview Retreat',
+			message: "Are there any good restaurants within walking distance? We'd love some local recommendations."
+		},
+		{
+			username: 'AdventureFam',
+			createdAt: '2024-02-26T11:45:00.000+00:00',
+			villaName: 'Tropical Paradise',
+			message: 'What are the best snorkeling spots nearby?'
+		}
 	]
 </script>
 
@@ -23,7 +52,15 @@
 							>{trigger.title}</Tabs.Trigger>
 					{/each}
 				</Tabs.List>
-				<Tabs.Content value="all">All</Tabs.Content>
+				<Tabs.Content value="all">
+					{#each messageData as message}
+						<Message
+							username={message.username}
+							createdAt={message.createdAt}
+							villaName={message.villaName}
+							message={message.message} />
+					{/each}
+				</Tabs.Content>
 				<Tabs.Content value="starred">Starred</Tabs.Content>
 				<Tabs.Content value="archived">Archived</Tabs.Content>
 				<Tabs.Content value="deleted">Deleted</Tabs.Content>

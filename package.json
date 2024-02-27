@@ -25,6 +25,7 @@
 		"prettier-plugin-svelte": "^3.1.2",
 		"prettier-plugin-tailwindcss": "^0.5.9",
 		"svelte": "^4.2.7",
+		"svelte-time": "^0.8.2",
 		"tailwindcss": "^3.3.6",
 		"vite": "^5.0.3",
 		"vitest": "^1.2.0"
@@ -35,6 +36,7 @@
 		"@internationalized/date": "^3.5.2",
 		"bits-ui": "^0.18.2",
 		"clsx": "^2.1.0",
+		"dayjs": "^1.11.10",
 		"lucide-svelte": "^0.338.0",
 		"mode-watcher": "^0.2.1",
 		"svelte-radix": "^1.0.1",
