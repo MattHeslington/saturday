@@ -1,3 +1,12 @@
 OPTIMISATIONS:
 ☐ css in account button - the mt hack and sizing - why?
 ☐ can we use dynamic binding in the forms like this https://x.com/huntabyte/status/1761129846543876289?s=20
+☐ check the security of using the VITE_API_URL
+
+IMMEDIATE:
+☐ create a simple form in add and post to the remote endpoint. in the remote endpoint just console log the body
+☐ create simple form and another test endpoint and check the same but with query params
+☐ build the cards
+
+LATER:
+☐ lato only for card body?
