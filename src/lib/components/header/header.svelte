@@ -4,6 +4,7 @@
 	import { Button } from '$lib/components/ui/button'
 	import Logo from './logo.svelte'
 	import Filter from './filter/filter.svelte'
+	import Currency from './currency.svelte'
 	import ThemeButton from './theme-button.svelte'
 	import AccountButton from './account-button/account-button.svelte'
 
@@ -24,6 +25,7 @@
 		<Filter />
 	{/if}
 	<div class="flex h-full w-[240px] items-center justify-end space-x-2">
+		<Currency />
 		<ThemeButton />
 		{#if authUser.loggedIn}
 			<AccountButton />

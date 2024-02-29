@@ -10,3 +10,4 @@ export const user = writable({
 })
 export const breadcrumbs = writable([])
 export const selectedDates = writable({})
+export const selectedCurrency = writable('USD')

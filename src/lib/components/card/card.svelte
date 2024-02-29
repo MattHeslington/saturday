@@ -1,5 +1,6 @@
 <script>
 	export let listing
+	import Price from '$lib/components/price.svelte'
 	import Carousel from './carousel.svelte'
 </script>
 
@@ -11,8 +12,7 @@
 			<p class="line-clamp-3 text-muted-foreground">{listing.description}</p>
 			<footer class="flex items-center justify-between">
 				<div class="flex items-center font-bold">
-					$199
-					<!-- <Price price={listing.basePrice} /> --><span class="text-sm font-light">&nbsp;/&nbsp;night</span>
+					<Price price={listing.basePrice} /><span class="text-sm font-light">&nbsp;/&nbsp;night</span>
 				</div>
 				<div class="text-sm font-light">NEW</div>
 			</footer>

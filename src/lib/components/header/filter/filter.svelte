@@ -71,7 +71,7 @@
 		{#each things as thing (thing)}
 			<div
 				animate:flip={{ delay: 0, duration: 500, easing: quintOut }}
-				class={`border-slate-6 bg-slate-1 absolute top-[40px] z-10 overflow-hidden rounded-md border
+				class={`absolute top-[40px] z-10 overflow-hidden rounded-md border border-border bg-background
             ${selected === 'location' ? 'left-0 h-[480px] w-[434px] p-[10px]' : ''}
             ${selected === 'dates' ? 'left-0 right-0 h-[520px] w-[800px] p-[10px]' : ''} 
             ${selected === 'rooms' ? 'right-0 h-[160px] w-[300px] p-[10px]' : ''}
