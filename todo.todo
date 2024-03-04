@@ -4,7 +4,7 @@ OPTIMISATIONS:
 ☐ check the security of using the VITE_API_URL
 
 IMMEDIATE:
-☐ create a simple form in add and post to the remote endpoint. in the remote endpoint just console log the body
+☐ create a simple form in add and post to the remote endpoint. in the remote endpoint just console log the body => 
 ☐ create simple form and another test endpoint and check the same but with query params
 ☐ build the cards
 

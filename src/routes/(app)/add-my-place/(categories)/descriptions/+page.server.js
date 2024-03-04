@@ -6,7 +6,7 @@ export const actions = {
 		const text = data.get('text')
 
 		// Specify the external endpoint URL
-		const externalEndpoint = `${api}/listings/post`
+		const externalEndpoint = `${api}/api/listings/post`
 		console.log(externalEndpoint)
 		// Use fetch API to post data to the external endpoint
 		const response = await fetch(externalEndpoint, {
