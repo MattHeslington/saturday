@@ -1,24 +1,37 @@
 <script>
 	import { Checkbox } from '$lib/components/ui/checkbox'
 	import Label from '$lib/components/ui/label/label.svelte'
+	import Title from '../section-header.svelte'
 	import SEO from '$lib/components/seo.svelte'
 
 	import { amenitiesStandard } from './amenitiesStandard'
+	import { AmenitiesSpecial } from './amenitiesSpecial'
 
-	let selectedValues = []
+	let standardValues = []
+	let specialValues = []
 
-	function handleCheckboxChange(checked, value) {
-		// console.log('function value', value)
-		// console.log('function checked', checked)
+	function handleStandardChange(checked, value) {
 		if (checked) {
-			selectedValues = [...selectedValues, value]
+			standardValues = [...standardValues, value]
 		} else {
-			selectedValues = selectedValues.filter((item) => item !== value)
+			standardValues = standardValues.filter((item) => item !== value)
+		}
+	}
+
+	function handleSpecialChange(checked, value) {
+		if (checked) {
+			specialValues = [...specialValues, value]
+		} else {
+			specialValues = specialValues.filter((item) => item !== value)
 		}
 	}
 
 	$: {
-		console.log('selectedValues', selectedValues)
+		console.log('standardValues', standardValues)
+	}
+
+	$: {
+		console.log('specialValues', specialValues)
 	}
 
 	const bc = [
@@ -28,13 +41,34 @@
 </script>
 
 <SEO {bc} />
-<div class="h-full w-full border-l border-r border-border">
-	<h2>amenities</h2>
+<div class="h-full w-full">
+	<Title title="Amenities" />
 	<div class="grid w-full grid-cols-3 gap-10">
 		{#each amenitiesStandard as item}
 			<div class="col-span-1 flex items-center justify-start space-x-2">
-				<Checkbox id={item.value} onCheckedChange={(checked) => handleCheckboxChange(checked, item.value)} />
-				<Label for={item.value} class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+				<Checkbox
+					id={item.value}
+					onCheckedChange={(checked) => handleStandardChange(checked, item.value)}
+					class="border-muted-foreground text-muted-foreground checked:bg-muted-foreground" />
+				<Label
+					for={item.value}
+					class="text-sm font-medium capitalize leading-none text-muted-foreground peer-checked:text-primary peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+					{item.name}
+				</Label>
+			</div>
+		{/each}
+	</div>
+	<Title title="Special Amenities" />
+	<div class="grid w-full grid-cols-3 gap-10">
+		{#each AmenitiesSpecial as item}
+			<div class="col-span-1 flex items-center justify-start space-x-2">
+				<Checkbox
+					id={item.value}
+					onCheckedChange={(checked) => handleSpecialChange(checked, item.value)}
+					class="border-muted-foreground text-muted-foreground checked:bg-muted-foreground" />
+				<Label
+					for={item.value}
+					class="text-sm font-medium capitalize leading-none text-muted-foreground peer-checked:text-primary peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
 					{item.name}
 				</Label>
 			</div>
