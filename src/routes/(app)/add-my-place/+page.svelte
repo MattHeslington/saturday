@@ -5,4 +5,4 @@
 
 <SEO {bc} />
 
-<a href="add-my-place/guide">continue</a>
+<a href="/add-my-place/guide">continue</a>

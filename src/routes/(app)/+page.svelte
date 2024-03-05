@@ -3,7 +3,7 @@
 	import SEO from '$lib/components/seo.svelte'
 	import Card from '$lib/components/card/card.svelte'
 	const bc = [{ title: 'Home', url: null }]
-	console.log('external data', data)
+	// console.log('external data', data)
 	const listings = data.items
 </script>
 

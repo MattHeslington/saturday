@@ -5,6 +5,22 @@
 
 	import { amenitiesStandard } from './amenitiesStandard'
 
+	let selectedValues = []
+
+	function handleCheckboxChange(checked, value) {
+		// console.log('function value', value)
+		// console.log('function checked', checked)
+		if (checked) {
+			selectedValues = [...selectedValues, value]
+		} else {
+			selectedValues = selectedValues.filter((item) => item !== value)
+		}
+	}
+
+	$: {
+		console.log('selectedValues', selectedValues)
+	}
+
 	const bc = [
 		{ title: 'Add My Place', url: '/add-my-place' },
 		{ title: 'Amenities', url: '/add-my-place/amenities' }
@@ -17,7 +33,7 @@
 	<div class="grid w-full grid-cols-3 gap-10">
 		{#each amenitiesStandard as item}
 			<div class="col-span-1 flex items-center justify-start space-x-2">
-				<Checkbox id={item.value} />
+				<Checkbox id={item.value} onCheckedChange={(checked) => handleCheckboxChange(checked, item.value)} />
 				<Label for={item.value} class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
 					{item.name}
 				</Label>
