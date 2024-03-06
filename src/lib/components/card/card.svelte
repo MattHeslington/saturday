@@ -7,7 +7,7 @@
 
 <div class="relative">
 	<a href={listing.slug}>
-		<article class="col-span-1 flex h-max w-full cursor-pointer flex-col space-y-1">
+		<article class="group col-span-1 flex h-max w-full cursor-pointer flex-col space-y-1">
 			<Carousel photos={listing.photos} />
 			<h2 class="line-clamp-1 text-lg font-bold [view-transition-name:listingtitle]">{listing.title}</h2>
 			<p class="line-clamp-3 text-muted-foreground">{listing.description}</p>

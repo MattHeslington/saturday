@@ -12,7 +12,7 @@
 				<img
 					src={`${url}/carousel`}
 					alt="bag"
-					class="h-full w-full snap-center snap-always object-cover object-center [view-transition-name:mainimage]" />
+					class="h-full w-full snap-center snap-always object-cover object-center duration-500 [view-transition-name:mainimage] group-hover:scale-105" />
 			{:else}
 				<img
 					src={`${url}/carousel`}
