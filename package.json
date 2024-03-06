@@ -39,8 +39,9 @@
 		"clsx": "^2.1.0",
 		"dayjs": "^1.11.10",
 		"lucide-svelte": "^0.338.0",
-		"mode-watcher": "^0.2.1",
+		"mode-watcher": "^0.2.2",
 		"svelte-radix": "^1.0.1",
+		"svelte-sonner": "^0.3.19",
 		"tailwind-merge": "^2.2.1",
 		"tailwind-variants": "^0.2.0"
 	}

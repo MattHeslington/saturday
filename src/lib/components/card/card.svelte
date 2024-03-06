@@ -1,5 +1,6 @@
 <script>
 	export let listing
+	import Like from './like.svelte'
 	import Price from '$lib/components/price.svelte'
 	import Carousel from './carousel.svelte'
 </script>
@@ -18,7 +19,7 @@
 			</footer>
 		</article>
 	</a>
-	<div class="absolute right-2 top-1 z-[2] grid h-8 w-8 place-content-center">
-		<!-- <Like listingId={listing._id} ownerId={listing.ownerId} /> -->
+	<div class="absolute right-2 top-1 z-[10] grid h-8 w-8 place-content-center">
+		<Like listingId={listing._id} ownerId={listing.ownerId} />
 	</div>
 </div>
