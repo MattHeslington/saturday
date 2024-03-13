@@ -114,7 +114,7 @@
 				</Dialog.Root>
 			</div>
 
-			<RangeCalendar bind:value numberOfMonths={2} class="rounded-md border shadow" />
+			<RangeCalendar bind:value numberOfMonths={2} class="w-full rounded-md border" />
 		</div>
 		<div class="col-span-4 mt-4 flex h-max shrink-0 flex-col items-baseline justify-start rounded-md border border-border p-5">
 			<div class="flex w-full items-center justify-start pb-[10px]">
