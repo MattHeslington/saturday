@@ -82,6 +82,8 @@
 	onMount(() => {
 		getWishlists()
 	})
+
+	let collapsibleOpen = false
 </script>
 
 {#if liked}
@@ -113,8 +115,9 @@
 				</Select.Content>
 			</Select.Root>
 
-			<Collapsible.Root class="w-full">
-				<Collapsible.Trigger class="w-full"><Button variant="outline" class="w-full">Add a new list</Button></Collapsible.Trigger>
+			<Collapsible.Root bind:open={collapsibleOpen} class="w-full">
+				<Collapsible.Trigger class="w-full"
+					><Button variant="outline" class="w-full">{collapsibleOpen ? 'Close' : 'Create new list'}</Button></Collapsible.Trigger>
 				<Collapsible.Content class="mt-3 grid grid-cols-12 gap-3">
 					<Input bind:value={wishlistName} type="text" placeholder="e.g. Birthday Villas" class="col-span-8" />
 					<Button on:click={createNewWishlist} variant="outline" class="col-span-4">Save</Button>

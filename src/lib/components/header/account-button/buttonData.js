@@ -27,7 +27,7 @@ export const buttons = [
 	{
 		title: 'Add My Place',
 		body: 'Become a host and make money by adding your place',
-		url: '/add-your-place'
+		url: '/add'
 	},
 	{
 		title: 'Owner Dashboard',
