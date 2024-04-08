@@ -37,16 +37,21 @@
 	async function like(selected) {
 		wishlistName = selected
 		liked = true
-		// await fetchData('/api/likes/add', 'POST', {
-		// 	listingId: listingId,
-		// 	ownerId: ownerId,
-		// 	wishlistId: wishlistId
-		// })
+		await fetchData('https://api-uv.ultimatevillas.workers.dev/api/likes/add', 'POST', {
+			listingid: 'abcdefg',
+			ownerid: '1233',
+			wishlistid: '55555'
+		})
 		toast('Villa Liked')
 	}
 
-	function unlike() {
+	async function unlike() {
 		liked = false
+		await fetchData('https://api-uv.ultimatevillas.workers.dev/api/likes/remove', 'DELETE', {
+			listingid: 'abcdefg',
+			ownerid: '1233',
+			wishlistid: '55555'
+		})
 		toast('Like Removed')
 	}
 
