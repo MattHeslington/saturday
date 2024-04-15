@@ -3,6 +3,7 @@
 	import { schema } from './schema.js'
 	import { superForm } from 'sveltekit-superforms'
 	import { zodClient } from 'sveltekit-superforms/adapters'
+	import { numbers } from './schema.js'
 	import { placeType } from './placeType.js'
 	import { spaceType } from './spaceType.js'
 	import { highlights } from './highlights.js'
@@ -10,6 +11,11 @@
 	import { amenitiesStandard } from './amenitiesStandard.js'
 	import { Field, Control, Label, Description, FieldErrors, Fieldset, Legend } from 'formsnap'
 	import SuperDebug from 'sveltekit-superforms'
+
+	// UI
+	import * as Select from '$lib/components/ui/select'
+	import { Input } from '$lib/components/ui/input'
+	import { Checkbox } from '$lib/components/ui/checkbox'
 
 	const form = superForm(data.form, {
 		validators: zodClient(schema)
@@ -48,18 +54,18 @@
 </div>
 
 <form method="POST" use:enhance>
-	<Field {form} name="name">
-		<Control let:attrs>
-			<Label>Name</Label>
-			<input {...attrs} type="text" bind:value={$formData.name} />
+	<Field {form} name="name" class="flex flex-col">
+		<Control let:attrs class="flex flex-col">
+			<Label class="font-bold">Name</Label>
+			<Input {...attrs} type="text" bind:value={$formData.name} />
 		</Control>
-		<Description>If your place doesn't have a name, enter a name for your reference</Description>
+		<Description class="text-sm text-gray-500">If your place doesn't have a name, enter a name for your reference</Description>
 		<FieldErrors />
 	</Field>
 	<Field {form} name="title">
 		<Control let:attrs>
 			<Label>Title</Label>
-			<input {...attrs} type="text" bind:value={$formData.title} />
+			<Input {...attrs} type="text" bind:value={$formData.title} />
 		</Control>
 		<Description>Describe your place</Description>
 		<FieldErrors />
@@ -122,6 +128,64 @@
 		<Description>Select all that apply</Description>
 		<FieldErrors />
 	</Fieldset>
+	<Field {form} name="bedrooms">
+		<Control let:attrs>
+			<Label>Bedrooms</Label>
+			<select {...attrs} bind:value={$formData.bedrooms}>
+				{#each numbers as number}
+					<option value={number}>{number}</option>
+				{/each}
+			</select>
+		</Control>
+		<Description>Select how many bedrooms</Description>
+		<FieldErrors />
+	</Field>
+
+	<Field {form} name="beds">
+		<Control let:attrs>
+			<Label>Beds</Label>
+			<select {...attrs} bind:value={$formData.beds}>
+				{#each numbers as number}
+					<option value={number}>{number}</option>
+				{/each}
+			</select>
+		</Control>
+		<Description>Select how many beds there are</Description>
+		<FieldErrors />
+	</Field>
+
+	<Field {form} name="bathrooms">
+		<Control let:attrs>
+			<Label>Bathrooms</Label>
+			<select {...attrs} bind:value={$formData.bathrooms}>
+				{#each numbers as number}
+					<option value={number}>{number}</option>
+				{/each}
+			</select>
+		</Control>
+		<Description>Select how many bathrooms you have</Description>
+		<FieldErrors />
+	</Field>
+	<Field {form} name="guests">
+		<Control let:attrs>
+			<Label>Guests</Label>
+			<select {...attrs} bind:value={$formData.guests}>
+				{#each numbers as number}
+					<option value={number}>{number}</option>
+				{/each}
+			</select>
+		</Control>
+		<Description>Maximum number of guests</Description>
+		<FieldErrors />
+	</Field>
+	<Field {form} name="description">
+		<Control let:attrs>
+			<Label>Description</Label>
+			<textarea {...attrs} bind:value={$formData.description} />
+		</Control>
+		<Description>Describe your place</Description>
+		<FieldErrors />
+	</Field>
 	<button type="submit">submit</button>
 </form>
-<SuperDebug data={$formData} />
+<!-- <SuperDebug data={$formData} /> -->

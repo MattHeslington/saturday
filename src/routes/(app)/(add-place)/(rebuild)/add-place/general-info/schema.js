@@ -1,5 +1,6 @@
 import { z } from 'zod'
 
+export const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] // USED IN UI, NOT HERE
 export const placeTypes = ['villa', 'house', 'apartment', 'boutique-hotel', 'bed-and-breakfast', 'guest-house', 'unique-space']
 export const spaceTypes = ['entire-place', 'private-room', 'shared-room']
 export const highlights = ['peaceful', 'unique', 'family-friendly', 'stylish', 'central', 'spacious', 'instagrammable']
@@ -50,10 +51,10 @@ export const schema = z.object({
 	specialLocation: z.string(),
 	amSpecial: z.array(z.enum(amenitiesSpecial)),
 	amStandard: z.array(z.enum(amenitiesStandard)),
-	bedrooms: z.number(),
-	beds: z.number(),
-	bathrooms: z.number(),
-	guests: z.number(),
+	bedrooms: z.number().min(1).max(10).default(2),
+	beds: z.number().min(1).max(10).default(2),
+	bathrooms: z.number().min(1).max(10).default(2),
+	guests: z.number().min(1).max(20).default(4),
 	checkIn: z.string(),
 	checkOut: z.string(),
 	smoking: z.boolean(),
